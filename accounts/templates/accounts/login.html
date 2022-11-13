@@ -203,49 +203,49 @@
                     <!-- Form -->
                     <form class="js-validate needs-validation" novalidate method="post">
                         {% csrf_token %}
-                        {% if form.non_field_errors %}
-                            <div class="alert alert-danger" role="alert">
-                                {% for error in form.non_field_errors %}
-                                    {{ error }}
-                                {% endfor %}
-                            </div>
-                        {% endif %}
+{#                        {% if form.non_field_errors %}#}
+{#                            <div class="alert alert-danger" role="alert">#}
+{#                                {% for error in form.non_field_errors %}#}
+{#                                    {{ error }}#}
+{#                                {% endfor %}#}
+{#                            </div>#}
+{#                        {% endif %}#}
                         <!-- Form -->
-                        <div class="mb-4 mt-2">
-                            <label class="form-label" for="id_email">Your email</label>
-                            <input type="email" class="form-control form-control-lg" name="email" id="id_email"
-                                   tabindex="1" placeholder="email@address.com" aria-label="email@address.com" required>
-                            <span class="invalid-feedback">Please enter a valid email address.</span>
-                        </div>
+{#                        <div class="mb-5 mt-2">#}
+{#                            <label class="form-label" for="id_email">Your email</label>#}
+{#                            <input type="email" class="form-control form-control-lg"  id="id_email" name="email"#}
+{#                                   tabindex="1" placeholder="email@address.com" aria-label="email@address.com" required>#}
+{#                            <span class="invalid-feedback">Please enter a valid email address.</span>#}
+{#                        </div>#}
+{#                        <!-- End Form -->#}
+{##}
+{#                        <!-- Form -->#}
+{#                        <div class="mb-5">#}
+{#                            <label class="form-label w-100" for="id_password" tabindex="0">#}
+{#                              <span class="d-flex justify-content-between align-items-center">#}
+{#                                  <span>Password</span>#}
+{#                              </span>#}
+{#                            </label>#}
+{#                            <div class="input-group input-group-merge" data-hs-validation-validate-class>#}
+{#                                <input type="password" class="js-toggle-password form-control form-control-lg"#}
+{#                                       name="password" id="id_password" placeholder="8+ characters required"#}
+{#                                       aria-label="8+ characters required" required minlength="8"#}
+{#                                       data-hs-toggle-password-options='{#}
+{#                           "target": "#changePassTarget",#}
+{#                           "defaultClass": "bi-eye-slash",#}
+{#                           "showClass": "bi-eye",#}
+{#                           "classChangeTarget": "#changePassIcon"#}
+{#                         }'>#}
+{#                                <a id="changePassTarget" class="input-group-append input-group-text"#}
+{#                                   href="javascript:;">#}
+{#                                    <i id="changePassIcon" class="bi-eye"></i>#}
+{#                                </a>#}
+{#                            </div>#}
+{##}
+{#                            <span class="invalid-feedback">Please enter a valid password.</span>#}
+{#                        </div>#}
                         <!-- End Form -->
-
-                        <!-- Form -->
-                        <div class="mb-5">
-                            <label class="form-label w-100" for="id_password" tabindex="0">
-                              <span class="d-flex justify-content-between align-items-center">
-                                  <span>Password</span>
-                              </span>
-                            </label>
-                            <div class="input-group input-group-merge" data-hs-validation-validate-class>
-                                <input type="password" class="js-toggle-password form-control form-control-lg"
-                                       name="password" id="id_password" placeholder="8+ characters required"
-                                       aria-label="8+ characters required" required minlength="8"
-                                       data-hs-toggle-password-options='{
-                           "target": "#changePassTarget",
-                           "defaultClass": "bi-eye-slash",
-                           "showClass": "bi-eye",
-                           "classChangeTarget": "#changePassIcon"
-                         }'>
-                                <a id="changePassTarget" class="input-group-append input-group-text"
-                                   href="javascript:;">
-                                    <i id="changePassIcon" class="bi-eye"></i>
-                                </a>
-                            </div>
-
-                            <span class="invalid-feedback">Please enter a valid password.</span>
-                        </div>
-                        <!-- End Form -->
-
+                        {{ form.as_p }}
 
                         <div class="d-grid">
                             <button type="submit" class="btn btn-primary btn-lg">Sign in</button>
@@ -271,23 +271,23 @@
 
 <!-- JS Plugins Init. -->
 <script>
-    (function () {
-        window.onload = function () {
-            // INITIALIZATION OF BOOTSTRAP VALIDATION
-            // =======================================================
-            HSBsValidation.init('.js-validate', {
-                onSubmit: data => {
-                    data.event.preventDefault()
-                    alert('Submited')
-                }
-            })
-
-
-            // INITIALIZATION OF TOGGLE PASSWORD
-            // =======================================================
-            new HSTogglePassword('.js-toggle-password')
-        }
-    })()
+    {#(function () {#}
+    {#    window.onload = function () {#}
+    {#        // INITIALIZATION OF BOOTSTRAP VALIDATION#}
+    {#        // =======================================================#}
+    {#        HSBsValidation.init('.js-validate', {#}
+    {#            onSubmit: data => {#}
+    {#                data.event.preventDefault()#}
+    {#                alert('Submited')#}
+    {#            }#}
+    {#        })#}
+    {##}
+    {##}
+    {#        // INITIALIZATION OF TOGGLE PASSWORD#}
+    {#        // =======================================================#}
+    {#        new HSTogglePassword('.js-toggle-password')#}
+    {#    }#}
+    {#})()#}
 </script>
 </body>
 

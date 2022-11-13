@@ -14,11 +14,11 @@ def login_view(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
-            email = form.cleaned_data['email']
+            email = form.cleaned_data.get('email')
             password = form.cleaned_data['password']
             user = authenticate(username=email, password=password)
             login(request, user)
-            return redirect('dashboard')
+            return redirect('core:index')
     else:
         form = LoginForm()
     return render(request, 'accounts/login.html', {'form': form})
