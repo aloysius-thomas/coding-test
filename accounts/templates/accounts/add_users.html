@@ -18,39 +18,40 @@
 
         <!-- Content -->
         <form method="post">
+            {{ perms.accounts }}
             {% csrf_token %}
-{#            <label for="id_email">Email:</label>#}
-{#            <input type="email" name="email" id="id_email">#}
-{##}
-{#            <label for="id_password">Password</label>#}
-{#            <input type="text" id="id_password">#}
-{##}
-{#            <fieldset>#}
-{#                <legend>Choose view permissions</legend>#}
-{#                <div>#}
-{#                    <input type="checkbox" id="accounts" name="interest" value="can_view_account"/>#}
-{#                    <label for="accounts">Accounts</label>#}
-{#                </div>#}
-{#                <div>#}
-{#                    <input type="checkbox" id="hr" name="interest" value="can_view_hr"/>#}
-{#                    <label for="hr">HR</label>#}
-{#                </div>#}
-{#                <div>#}
-{#                    <input type="checkbox" id="sales" name="interest" value="can_view_sales"/>#}
-{#                    <label for="sales">sales</label>#}
-{#                </div>#}
-{#                <div>#}
-{#                    <input type="checkbox" id="id_purchase" name="interest" value="can_view_purchase"/>#}
-{#                    <label for="id_purchase">purchase</label>#}
-{#                </div>#}
-{#                <div>#}
-{#                    <input type="checkbox" id="id_reports" name="interest" value="can_view_reports"/>#}
-{#                    <label for="id_reports">Reports</label>#}
-{#                </div>#}
-{#            </fieldset>#}
+            {#            <label for="id_email">Email:</label>#}
+            {#            <input type="email" name="email" id="id_email">#}
+            {##}
+            {#            <label for="id_password">Password</label>#}
+            {#            <input type="text" id="id_password">#}
+            {##}
+            {#            <fieldset>#}
+            {#                <legend>Choose view permissions</legend>#}
+            {#                <div>#}
+            {#                    <input type="checkbox" id="accounts" name="interest" value="can_view_account"/>#}
+            {#                    <label for="accounts">Accounts</label>#}
+            {#                </div>#}
+            {#                <div>#}
+            {#                    <input type="checkbox" id="hr" name="interest" value="can_view_hr"/>#}
+            {#                    <label for="hr">HR</label>#}
+            {#                </div>#}
+            {#                <div>#}
+            {#                    <input type="checkbox" id="sales" name="interest" value="can_view_sales"/>#}
+            {#                    <label for="sales">sales</label>#}
+            {#                </div>#}
+            {#                <div>#}
+            {#                    <input type="checkbox" id="id_purchase" name="interest" value="can_view_purchase"/>#}
+            {#                    <label for="id_purchase">purchase</label>#}
+            {#                </div>#}
+            {#                <div>#}
+            {#                    <input type="checkbox" id="id_reports" name="interest" value="can_view_reports"/>#}
+            {#                    <label for="id_reports">Reports</label>#}
+            {#                </div>#}
+            {#            </fieldset>#}
             {{ form.as_p }}
 
-            <button type="submit">Save </button>
+            <button type="submit">Save</button>
         </form>
     </div>
 {% endblock %}

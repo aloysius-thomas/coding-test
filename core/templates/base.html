@@ -425,107 +425,122 @@
                         </a>
                     </div>
 
-                    <!-- Collapse -->
-                    <div class="nav-item">
-                        <a class="nav-link dropdown-toggle" href="#Accounts" role="button" data-bs-toggle="collapse"
-                           data-bs-target="#Accounts" aria-expanded="true" aria-controls="Accounts">
-                            <i class="bi-123 nav-icon"></i>
-                            <span class="nav-link-title">Accounts</span>
-                        </a>
 
-                        <div id="Accounts" class="nav-collapse collapse" data-bs-parent="#navbarVerticalMenu">
-                            <a class="nav-link" href="#">Manual Journals </a>
-                            <a class="nav-link" href="#">Journals Headers</a>
+                    <!-- Collapse -->
+                    {% if perms.accounts.can_view_account %}
+
+
+                        <div class="nav-item">
+                            <a class="nav-link dropdown-toggle" href="#Accounts" role="button" data-bs-toggle="collapse"
+                               data-bs-target="#Accounts" aria-expanded="true" aria-controls="Accounts">
+                                <i class="bi-123 nav-icon"></i>
+                                <span class="nav-link-title">Accounts</span>
+                            </a>
+
+                            <div id="Accounts" class="nav-collapse collapse" data-bs-parent="#navbarVerticalMenu">
+                                <a class="nav-link" href="#">Manual Journals </a>
+                                <a class="nav-link" href="#">Journals Headers</a>
+                            </div>
                         </div>
-                    </div>
+                    {% endif %}
                     <!-- End Collapse -->
 
                     <!-- Collapse -->
-                    <div class="nav-item">
-                        <a class="nav-link dropdown-toggle" href="#HR" role="button" data-bs-toggle="collapse"
-                           data-bs-target="#HR" aria-expanded="true" aria-controls="HR">
-                            <i class="bi-people nav-icon"></i>
-                            <span class="nav-link-title">HR</span>
-                        </a>
+                    {% if perms.accounts.can_view_hr %}
 
-                        <div id="HR" class="nav-collapse collapse" data-bs-parent="#navbarVerticalMenu">
-                            <a class="nav-link" href="#">Employees</a>
-                            <a class="nav-link" href="#">Pay Slip</a>
-                            <a class="nav-link" href="#">Departments</a>
-                            <a class="nav-link" href="#">Leaves</a>
-                            <a class="nav-link" href="#">Type leaves</a>
+                        <div class="nav-item">
+                            <a class="nav-link dropdown-toggle" href="#HR" role="button" data-bs-toggle="collapse"
+                               data-bs-target="#HR" aria-expanded="true" aria-controls="HR">
+                                <i class="bi-people nav-icon"></i>
+                                <span class="nav-link-title">HR</span>
+                            </a>
+
+                            <div id="HR" class="nav-collapse collapse" data-bs-parent="#navbarVerticalMenu">
+                                <a class="nav-link" href="#">Employees</a>
+                                <a class="nav-link" href="#">Pay Slip</a>
+                                <a class="nav-link" href="#">Departments</a>
+                                <a class="nav-link" href="#">Leaves</a>
+                                <a class="nav-link" href="#">Type leaves</a>
+                            </div>
                         </div>
-                    </div>
+                    {% endif %}
                     <!-- End Collapse -->
+                    {% if perms.accounts.can_view_purchase %}
 
-                    <!-- Collapse -->
-                    <div class="nav-item">
-                        <a class="nav-link dropdown-toggle" href="#Purchase" role="button" data-bs-toggle="collapse"
-                           data-bs-target="#Purchase" aria-expanded="true" aria-controls="Purchase">
-                            <i class="bi-bag nav-icon"></i>
-                            <span class="nav-link-title">Purchase</span>
-                        </a>
+                        <!-- Collapse -->
+                        <div class="nav-item">
+                            <a class="nav-link dropdown-toggle" href="#Purchase" role="button" data-bs-toggle="collapse"
+                               data-bs-target="#Purchase" aria-expanded="true" aria-controls="Purchase">
+                                <i class="bi-bag nav-icon"></i>
+                                <span class="nav-link-title">Purchase</span>
+                            </a>
 
-                        <div id="Purchase" class="nav-collapse collapse" data-bs-parent="#navbarVerticalMenu">
-                            <a class="nav-link" href="#">Purchase </a>
-                            <a class="nav-link" href="#">Add Purchase </a>
-                            <a class="nav-link" href="#">Purchase Type</a>
-                            <a class="nav-link" href="#">Vendors</a>
+                            <div id="Purchase" class="nav-collapse collapse" data-bs-parent="#navbarVerticalMenu">
+                                <a class="nav-link" href="#">Purchase </a>
+                                <a class="nav-link" href="#">Add Purchase </a>
+                                <a class="nav-link" href="#">Purchase Type</a>
+                                <a class="nav-link" href="#">Vendors</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- End Collapse -->
+                        <!-- End Collapse -->
+                    {% endif %}
+                    {% if perms.accounts.can_view_sales %}
 
-                    <!-- Collapse -->
-                    <div class="nav-item">
-                        <a class="nav-link dropdown-toggle" href="#Sales" role="button" data-bs-toggle="collapse"
-                           data-bs-target="#Sales" aria-expanded="true" aria-controls="Sales">
-                            <i class="bi-cart nav-icon"></i>
-                            <span class="nav-link-title">Sales</span>
-                        </a>
+                        <!-- Collapse -->
 
-                        <div id="Sales" class="nav-collapse collapse" data-bs-parent="#navbarVerticalMenu">
-                            <a class="nav-link" href="#">Customer </a>
-                            <a class="nav-link" href="#">Estimates </a>
-                            <a class="nav-link" href="#">Sales Orders</a>
-                            <a class="nav-link" href="#">Delivery Note</a>
-                            <a class="nav-link" href="#">Invoices</a>
-                            <a class="nav-link" href="#">Payments</a>
+                        <div class="nav-item">
+                            <a class="nav-link dropdown-toggle" href="#Sales" role="button" data-bs-toggle="collapse"
+                               data-bs-target="#Sales" aria-expanded="true" aria-controls="Sales">
+                                <i class="bi-cart nav-icon"></i>
+                                <span class="nav-link-title">Sales</span>
+                            </a>
+
+                            <div id="Sales" class="nav-collapse collapse" data-bs-parent="#navbarVerticalMenu">
+                                <a class="nav-link" href="#">Customer </a>
+                                <a class="nav-link" href="#">Estimates </a>
+                                <a class="nav-link" href="#">Sales Orders</a>
+                                <a class="nav-link" href="#">Delivery Note</a>
+                                <a class="nav-link" href="#">Invoices</a>
+                                <a class="nav-link" href="#">Payments</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- End Collapse -->
-
+                        <!-- End Collapse -->
+                    {% endif %}
                     <div class="nav-item">
                         <a class="nav-link " href="#" data-placement="left">
                             <i class="bi-building nav-icon"></i>
                             <span class="nav-link-title">Work site</span>
                         </a>
                     </div>
-
-                    <div class="nav-item">
-                        <a class="nav-link " href="#" data-placement="left">
-                            <i class="bi-bar-chart-line nav-icon"></i>
-                            <span class="nav-link-title">Reports</span>
-                        </a>
-                    </div>
-
-                    <!-- Collapse -->
-                    <div class="nav-item">
-                        <a class="nav-link dropdown-toggle" href="#Settings" role="button" data-bs-toggle="collapse"
-                           data-bs-target="#Settings" aria-expanded="true" aria-controls="Settings">
-                            <i class="bi-gear nav-icon"></i>
-                            <span class="nav-link-title">Settings</span>
-                        </a>
-
-                        <div id="Settings" class="nav-collapse collapse" data-bs-parent="#navbarVerticalMenu">
-                            <a class="nav-link" href="#">Business </a>
-                            <a class="nav-link" href="#">TAX </a>
-                            <a class="nav-link" href="#">Email</a>
-                            <a class="nav-link" href="{% url 'accounts:users' %}">Users</a>
-                            <a class="nav-link" href="#">User Roles</a>
-
+                    {% if perms.accounts.can_view_reports %}
+                        <div class="nav-item">
+                            <a class="nav-link " href="#" data-placement="left">
+                                <i class="bi-bar-chart-line nav-icon"></i>
+                                <span class="nav-link-title">Reports</span>
+                            </a>
                         </div>
-                    </div>
-                    <!-- End Collapse -->
+                    {% endif %}
+
+                    {% if user.is_superuser %}
+                        <!-- Collapse -->
+                        <div class="nav-item">
+                            <a class="nav-link dropdown-toggle" href="#Settings" role="button" data-bs-toggle="collapse"
+                               data-bs-target="#Settings" aria-expanded="true" aria-controls="Settings">
+                                <i class="bi-gear nav-icon"></i>
+                                <span class="nav-link-title">Settings</span>
+                            </a>
+
+                            <div id="Settings" class="nav-collapse collapse" data-bs-parent="#navbarVerticalMenu">
+                                <a class="nav-link" href="#">Business </a>
+                                <a class="nav-link" href="#">TAX </a>
+                                <a class="nav-link" href="#">Email</a>
+                                <a class="nav-link" href="{% url 'accounts:users' %}">Users</a>
+                                <a class="nav-link" href="#">User Roles</a>
+
+                            </div>
+                        </div>
+                        <!-- End Collapse -->
+                    {% endif %}
 
                 </div>
 

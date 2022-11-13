@@ -1,9 +1,14 @@
 from django.contrib.auth import logout, authenticate, login
+from django.contrib.auth.decorators import user_passes_test
 from django.shortcuts import render, redirect
 
 # Create your views here.
 from accounts.forms import LoginForm, RegisterForm
 from accounts.models import User
+
+
+def superuser(user):
+    return user.is_superuser
 
 
 def logout_view(request):
@@ -25,11 +30,13 @@ def login_view(request):
     return render(request, 'accounts/login.html', {'form': form})
 
 
+@user_passes_test(superuser)
 def users_view(request):
     user = User.objects.all()
     return render(request, 'accounts/users.html', {'users': user})
 
 
+@user_passes_test(superuser)
 def add_user_view(request):
     if request.method == 'POST':
 
