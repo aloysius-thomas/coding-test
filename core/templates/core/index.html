@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="content container-fluid">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h1 class="page-header-title">Dashboard</h1>
+                </div>
+                <!-- End Col -->
+
+                <div class="col-auto">
+                    <a class="btn btn-primary" href="javascript:;" data-bs-toggle="modal"
+                       data-bs-target="#inviteUserModal">
+                        <i class="bi-building me-1"></i> New Site
+                    </a>
+                </div>
+                <!-- End Col -->
+            </div>
+            <!-- End Row -->
+        </div>
+        <!-- End Page Header -->
+
+        <!-- Content -->
+        <div class="content container-fluid">
+            <div class="row justify-content-sm-center text-center py-1">
+                <div class="col-sm-7 col-md-5">
+                    <img class="img-fluid mb-2" src="{% static '/assets/svg/illustrations/oc-collaboration.svg' %}"
+                         alt="Image Description" data-hs-theme-appearance="default">
+                    <img class="img-fluid mb-2"
+                         src="{% static '/assets/svg/illustrations-light/oc-collaboration.svg' %}"
+                         alt="Image Description" data-hs-theme-appearance="dark">
+
+                    <h1>Hello, nice to see you!</h1>
+                    <p>You are now minutes away from creativity than ever before. Enjoy!</p>
+
+                    <a class="btn btn-primary" href="#"><i class="bi bi-plus-circle"></i> Create Your
+                        Site</a>
+                </div>
+            </div>
+            <!-- End Row -->
+        </div>
+        <!-- End Content -->
+{% endblock %}
