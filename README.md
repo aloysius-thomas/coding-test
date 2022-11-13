@@ -24,6 +24,8 @@ Then install the dependencies:
 Note the `(env)` in front of the prompt. This indicates that this terminal
 session operates in a virtual environment set up by `virtualenv`.
 
+
+Once `pip` has finished downloading the dependencies:
 migrate 
 
 ```sh
@@ -36,7 +38,8 @@ Create superuser
 ```sh
 (env)$ python manage.py createsuperuser
 ```
-Once `pip` has finished downloading the dependencies:
+
+Run Project
 ```sh
 (env)$ cd project
 (env)$ python manage.py runserver
