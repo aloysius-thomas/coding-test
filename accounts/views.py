@@ -8,16 +8,16 @@ from accounts.forms import LoginForm
 
 def logout_view(request):
     logout(request)
-    return redirect('home')
+    return redirect('accounts:login')
 
 
 def login_view(request):
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
-            username = form.cleaned_data['username']
+            email = form.cleaned_data['email']
             password = form.cleaned_data['password']
-            user = authenticate(username=username, password=password)
+            user = authenticate(username=email, password=password)
             login(request, user)
             return redirect('dashboard')
     else:
