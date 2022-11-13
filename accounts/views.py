@@ -1,7 +1,6 @@
 from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render, redirect
 
-
 # Create your views here.
 from accounts.forms import LoginForm
 
@@ -25,6 +24,9 @@ def login_view(request):
     return render(request, 'accounts/login.html', {'form': form})
 
 
+def users_view(request):
+    return render(request, 'accounts/users.html', )
 
 
-
+def add_user_view(request):
+    return render(request, 'accounts/add_users.html', )

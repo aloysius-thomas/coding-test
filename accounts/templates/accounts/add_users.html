@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="content container-fluid">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h1 class="page-header-title">Add User</h1>
+                </div>
+                <!-- End Col -->
+
+                <!-- End Col -->
+            </div>
+            <!-- End Row -->
+        </div>
+        <!-- End Page Header -->
+
+        <!-- Content -->
+        <form action="">
+            <label for="">Email:</label>
+            <input type="email">
+
+            <label for="">Password</label>
+            <input type="text">
+
+            <fieldset>
+                <legend>Choose view permissions</legend>
+                <div>
+                    <input type="checkbox" id="coding" name="interest" value="coding"/>
+                    <label for="accounts">Accounts</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="music" name="interest" value="music"/>
+                    <label for="hr">HR</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="coding" name="interest" value="coding"/>
+                    <label for="accounts">sales</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="music" name="interest" value="music"/>
+                    <label for="purchases">purchase</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="music" name="interest" value="music"/>
+                    <label for="reports">Reports</label>
+                </div>
+            </fieldset>
+
+            <input type="submit">
+        </form>
+    </div>
+{% endblock %}
