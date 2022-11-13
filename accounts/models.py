@@ -43,3 +43,12 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.email
+
+    class Meta:
+        permissions = (
+            ('can_view_account', 'can_view_account'),
+            ('can_view_hr', 'can_view_hr'),
+            ('can_view_sales', 'can_view_sales'),
+            ('can_view_purchase', 'can_view_purchase'),
+            ('can_view_reports', 'can_view_reports'),
+        )

@@ -2,7 +2,8 @@ from django.contrib.auth import logout, authenticate, login
 from django.shortcuts import render, redirect
 
 # Create your views here.
-from accounts.forms import LoginForm
+from accounts.forms import LoginForm, RegisterForm
+from accounts.models import User
 
 
 def logout_view(request):
@@ -25,8 +26,21 @@ def login_view(request):
 
 
 def users_view(request):
-    return render(request, 'accounts/users.html', )
+    user = User.objects.all()
+    return render(request, 'accounts/users.html', {'users': user})
 
 
 def add_user_view(request):
-    return render(request, 'accounts/add_users.html', )
+    if request.method == 'POST':
+
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data.get('email')
+            password = form.cleaned_data['password']
+            permissions = form.cleaned_data['permissions']
+            user = User.objects.create_user(email=email, password=password)
+            user.user_permissions.set(permissions)
+            return redirect('accounts:users')
+    else:
+        form = RegisterForm()
+    return render(request, 'accounts/add_users.html', {'form': form})

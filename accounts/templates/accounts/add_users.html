@@ -17,38 +17,40 @@
         <!-- End Page Header -->
 
         <!-- Content -->
-        <form action="">
-            <label for="">Email:</label>
-            <input type="email">
+        <form method="post">
+            {% csrf_token %}
+{#            <label for="id_email">Email:</label>#}
+{#            <input type="email" name="email" id="id_email">#}
+{##}
+{#            <label for="id_password">Password</label>#}
+{#            <input type="text" id="id_password">#}
+{##}
+{#            <fieldset>#}
+{#                <legend>Choose view permissions</legend>#}
+{#                <div>#}
+{#                    <input type="checkbox" id="accounts" name="interest" value="can_view_account"/>#}
+{#                    <label for="accounts">Accounts</label>#}
+{#                </div>#}
+{#                <div>#}
+{#                    <input type="checkbox" id="hr" name="interest" value="can_view_hr"/>#}
+{#                    <label for="hr">HR</label>#}
+{#                </div>#}
+{#                <div>#}
+{#                    <input type="checkbox" id="sales" name="interest" value="can_view_sales"/>#}
+{#                    <label for="sales">sales</label>#}
+{#                </div>#}
+{#                <div>#}
+{#                    <input type="checkbox" id="id_purchase" name="interest" value="can_view_purchase"/>#}
+{#                    <label for="id_purchase">purchase</label>#}
+{#                </div>#}
+{#                <div>#}
+{#                    <input type="checkbox" id="id_reports" name="interest" value="can_view_reports"/>#}
+{#                    <label for="id_reports">Reports</label>#}
+{#                </div>#}
+{#            </fieldset>#}
+            {{ form.as_p }}
 
-            <label for="">Password</label>
-            <input type="text">
-
-            <fieldset>
-                <legend>Choose view permissions</legend>
-                <div>
-                    <input type="checkbox" id="coding" name="interest" value="coding"/>
-                    <label for="accounts">Accounts</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="music" name="interest" value="music"/>
-                    <label for="hr">HR</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="coding" name="interest" value="coding"/>
-                    <label for="accounts">sales</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="music" name="interest" value="music"/>
-                    <label for="purchases">purchase</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="music" name="interest" value="music"/>
-                    <label for="reports">Reports</label>
-                </div>
-            </fieldset>
-
-            <input type="submit">
+            <button type="submit">Save </button>
         </form>
     </div>
 {% endblock %}
